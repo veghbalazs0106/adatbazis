@@ -1,0 +1,20 @@
+ELső feladat:
+
+{_id: 0, plot: 0, genres: 0, runtime: 0, rated: 0, cast: 0, num_mflix_comments: 0, poster: 0, fullplot: 0, released: 0, directors: 0, writers: 0, awards: 0, lastupdated: 0, year: 0, votes: 0, id: 0, type: 0, tomatoes: 0, languages: 0}
+{rating: -1}
+
+Második feladat: 
+
+db.users.find({name, email: {$regex: /.com/}, {})
+
+Harmadik feladat:
+
+db.movies.aggregate([{$group:{rated, average: {$avg: "runtime"}}])
+
+Negyedik feladat:
+
+MATCH (m:Movie)
+WHERE m.released > 1970 OR m.title CONTAINS "Love"
+RETURN m.title AS cím, m.name AS név
+ORDER BY cím DESC
+
